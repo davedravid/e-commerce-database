@@ -1,11 +1,11 @@
--- Create Categories Table
+-- Create categories table
 CREATE TABLE Categories (
     CategoryID INT PRIMARY KEY AUTO_INCREMENT,
     CategoryName VARCHAR(100) NOT NULL,
     Description TEXT
 );
 
--- Create Products Table
+-- Create products table
 CREATE TABLE Products (
     ProductID INT PRIMARY KEY AUTO_INCREMENT,
     ProductName VARCHAR(100) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE Products (
     FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
 );
 
--- Create Customers Table
+-- Create customers table
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY AUTO_INCREMENT,
     FirstName VARCHAR(50) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE Customers (
     Address VARCHAR(255)
 );
 
--- Create Orders Table
+-- Create orders table
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY AUTO_INCREMENT,
     CustomerID INT,
@@ -34,7 +34,7 @@ CREATE TABLE Orders (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 
--- Create Order_Items Table
+-- Create order_items table
 CREATE TABLE Order_Items (
     OrderItemID INT PRIMARY KEY AUTO_INCREMENT,
     OrderID INT,
